@@ -52,6 +52,7 @@ RUN popd
 # Configure botrunner
 RUN unzip botrunner
 RUN pushd botrunner
+ADD config.py /botrunner_folder/botrunner/botrunner
 RUN popd botrunner
 
 RUN popd
