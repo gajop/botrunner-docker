@@ -20,8 +20,8 @@ RUN 7z x -ospring spring.7z
 RUN tar xvf spring_src.tar.gz
 
 # Add maps/games
-RUN mkdir -p $HOME/.config/spring
-WORKDIR $HOME/.config/spring
+RUN mkdir -p /root/.config/spring
+WORKDIR /root/.config/spring
 
 RUN mkdir -p maps
 WORKDIR maps
@@ -37,7 +37,8 @@ WORKDIR ..
 
 RUN mkdir -p games
 WORKDIR games
-RUN wget --quiet https://github.com/Anarchid/Zero-K/archive/aitourney.zip -o ZK-aitourney.sdd
+RUN wget --quiet -O aitourney.zip https://github.com/Anarchid/Zero-K/archive/aitourney.zip  
+RUN unzip -d ZK-aitourney.sdd aitourney.zip
 WORKDIR ..
 
 RUN mkdir -p AI/Skirmish
