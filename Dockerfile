@@ -38,7 +38,8 @@ WORKDIR ..
 RUN mkdir -p games
 WORKDIR games
 RUN wget --quiet -O aitourney.zip https://github.com/Anarchid/Zero-K/archive/aitourney.zip  
-RUN unzip -d ZK-aitourney.sdd aitourney.zip
+RUN unzip aitourney.zip
+RUN mv Zero-K-aitourney ZK-aitourney.sdd
 WORKDIR ..
 
 RUN mkdir -p AI/Skirmish
