@@ -14,7 +14,7 @@ debug = False
 # websiteurl =  "http://manageddreams.com/ailadder"
 # websiteurl =  "http://manageddreams.com/ailadderstaging"
 # websiteurls  = [ "http://localhost:8000/botrunner_webservice" ]
-websiteurls  = [ "http://ec2-52-24-31-116.us-west-2.compute.amazonaws.com/botrunner_webservice" ]
+websiteurls  = [ "http://ec2-52-24-31-116.us-west-2.compute.amazonaws.com:8000/botrunner_webservice" ]
 
 sleepthislongwhennothingtodoseconds = 60
 

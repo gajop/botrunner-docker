@@ -52,9 +52,16 @@ WORKDIR ..
 
 # Configure botrunner
 WORKDIR /botrunner_folder
-RUN unzip botrunner.zip
+RUN unzip -d botrunner botrunner.zip
+RUN mv botrunner/botrunner-master/* botrunner/
+RUN mv botrunner/botrunner-master/.gitignore* botrunner/ #ugh
+RUN rmdir botrunner/botrunner-master
 WORKDIR botrunner
-ADD config.py /botrunner_folder/botrunner/botrunner
+ADD config.py /botrunner_folder/botrunner/botrunner/config.py
 WORKDIR ..
 
 WORKDIR ..
+
+RUN apt-get install -y -q python3-psutil
+
+CMD ["/botrunner_folder/botrunner/botrunner/botrunner.py"]
